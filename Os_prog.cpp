@@ -56,7 +56,33 @@ for(Proc_num=0;RemProc!=0;){
 			tut+=Curt-art[Proc_num]; 
 			indicator=0; 
                        
-		} 
+		}
+		if(Proc_num==num-1){
+			x++;
+			if(x==2){
+				Proc_num=0;
+				time_quan=10;
+				
+				printf("The time Quantum for second  is 10. \n");
+			}
+			else{
+				break;
+			}
+		}
+		else if(Curt >= art[Proc_num+1]){
+			Proc_num++;
+		}
+		else{
+			Proc_num=0;
+		}
+	}
+	
+	rr(num,remt,Curt,art,bst);
+	
+	return 0;
+}
+	
+	
 	
 	
 
