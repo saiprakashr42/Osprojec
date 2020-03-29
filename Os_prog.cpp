@@ -81,6 +81,51 @@ for(Proc_num=0;RemProc!=0;){
 	
 	return 0;
 }
+
+
+
+
+//declaring and providing the definition of function void
+
+
+void round_r(int num,int remt[20],Curt,int art[20],int bst[10])
+{
+	float average_wait,average_tut;
+	int i,j,n=num,Proc_num[30],w_time[30],tut_t[30],btime[30],total=0,loc,temp;
+	
+	 printf("Third round with least Burst time.\n");
+	
+	for(i=0;i<n;i++)
+    {
+        btime[i]=remt[i];
+        w_time[i]=Curt-art[i]-btime[i];
+	Proc_num[i]=i+1;
+    }
+	
+	
+	for(i=0;i<n;i++)
+    {
+        loc=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(btime[j]<btime[loc]){
+            	loc=j;
+            }
+        }
+	temp=btime[i];
+        btime[i]=btime[loc];
+        btime[loc]=temp;
+        temp=Proc_num[i];
+        Proc_num[i]=Proc_num[loc];
+        Proc_num[loc]=temp;
+    }
+	
+	
+	
+	
+	
+	
+}
 	
 	
 	
