@@ -121,10 +121,33 @@ void round_r(int num,int remt[20],Curt,int art[20],int bst[10])
     }
 	
 	
+	for(i=1;i<n;i++)
+    {
+		
+        for(j=0;j<i;j++)
+	{
+		
+        	w_time[i]+=btime[j];
+        }
+		
+        	total+=w_time[i];
+    }
+	
+    	averageg_wait=(float)total/n;
+    	total=0;
+    	printf("\nProcess\t\tBurst time\t\twaiting time\t\tTurnAround Time");
+	for(i=0;i<n;i++)
+    {
+        tut_t[i]=btime[i]+w_time[i];
+        total=total + tut_t[i];
+        printf("\nP%d\t\t\t%d\t\t\t%d\t\t\t%d",Proc_num[i],btime[i],w_time[i],tut_t[i]);
+    }
 	
 	
-	
-	
+    averageg_tut=(float)total/n;
+    printf("\n\nAverage Waiting time = %f",averageg_wait);
+    printf("\n Average Turnaround time = %f\n",average_tut);
+		
 }
 	
 	
